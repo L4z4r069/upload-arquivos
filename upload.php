@@ -1,7 +1,8 @@
 <?php
 
 $pastaDestino = "uploads/";
-var_dump($_FILES);
+$nomearquivo = $_FILES['arquivo']['name'];
+var_dump($_FILES['arquivo']['name']);
 
 
 ?>
