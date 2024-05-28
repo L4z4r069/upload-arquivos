@@ -3,6 +3,13 @@
 // Definiu a pasta de destino
 $pastaDestino = "/uploads/";
 
+var_dump($_FILES);
+
+var_dump($_FILES['arquivo']['size']);
+
+//verificar se o tamanho do arquivo é maior que 2 MB
+if($_FILES['arquivo']['size'] > 2000000)
+/*
 // Pegamos o nome do arquivo
 $nomeArquivo = $_FILES['arquivo']['name'];
 
@@ -21,4 +28,5 @@ if ($_FILES['arquivo']['size'] > 10000000){ //10M
     echo "Arquivo muito grande";
     exit;
 }
+*/
 ?>
