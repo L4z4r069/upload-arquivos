@@ -47,7 +47,7 @@ $fezupload = move_uploaded_file($_FILES['arquivo']['tmp_name'], __DIR__ .  $past
 
 if ($fezupload == true){
     $conexao = mysqli_connect("localhost","root","","upload_arquivo");
-    $sql = "INSERT INTO arquivo (Nome_arquivo) VALUES ('$nomearq . $extensao')";
+    $sql = "INSERT INTO arquivo (nome_arquivo) VALUES ('$nomearq . $extensao')";
     $resultado = mysqli_query($conexao, $sql);
     if ($resultado != false) {
         // se for uma alteração de arquivo
