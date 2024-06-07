@@ -35,13 +35,35 @@ if ($resultado != false) {
     <tbody>
      <?php
      foreach ($arquivos as $arquivo) {
-        echo "<tr><td>" . $arquivo['nome_arquivo'] . "</td>";
-        echo "<td><a href='alterar.php?nome_arquivo=" .
-                $arquivo['nome_arquivo'] . "'>Alterar</td>";
-        echo "<td><button>Excluir</button><td>";
+        $arq = $arquivo['nome_arquivo'];
+
+        echo "<tr>"; //Iniciar a linha
+        echo "<td>$arq</td>"; // 1ª coluna  com o nome do arquivo
+        echo "<td>"; //Iniciar a 2ª coluna
+        echo "<a "; //Abriu o link (abriu a tag "A")
+        echo "href='alterar?nome_arquivo=$arq'>"; //Inserir o link
+        echo "Alterar"; // Imprimiu o texto da tag "A"
+        echo "</a>"; //Fechei o link
+        echo "</td>"; // Fechei a 2ª coluna
+        echo "<td>"; // Abri a 3ª coluna
+        echo "<button "; // Abrir o botão
+        echo "onclick="; // Criou o atributo onclick    
+        echo "'excluir(\"$arq\");'>"; // Chamamos a função excluir
+        echo "Excluir"; // Mostrar o texto do botão
+        echo "</button>"; // Fechar o botão
+        echo "</td>"; // Fechar a linha
+
      }
      ?>
     </tbody>
     </table>
+
+    <script>
+
+        function excluir(nome_arquivo) {
+            confirm("Você tem certeza que deseja excluir o arquivo " + nome_arquivo + "?");
+        }
+
+    </script>
 </body>
 </html>
