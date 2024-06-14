@@ -28,7 +28,7 @@ if ($resultado != false) {
 <table border="2">
     <thead>
         <tr>
-             <th>Nome do Arquivo</th>
+             <th colspan="2">Nome do Arquivo</th>
              <th colspan="2">Opções</th>
         </tr>
     </thead>
@@ -38,7 +38,8 @@ if ($resultado != false) {
         $arq = $arquivo['nome_arquivo'];
 
         echo "<tr>"; //Iniciar a linha
-        echo "<td>$arq</td>"; // 1ª coluna  com o nome do arquivo
+        echo "<td><img src='uploads/$arq' width='100px' height='100px'></td>"; // Exibe imagem
+        echo "<td><a href='uploads/$arq'>$arq</a></td>"; // 1ª coluna  com o nome do arquivo
         echo "<td>"; //Iniciar a 2ª coluna
         echo "<a "; //Abriu o link (abriu a tag "A")
         echo "href='alterar?nome_arquivo=$arq'>"; //Inserir o link
